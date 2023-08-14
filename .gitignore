@@ -37,5 +37,4 @@ out/
 .vscode/
 
 ### 스프링 환경설정 노출방지 ###
-!**/src/main/**/application.yml
-!**/src/test/**/application.yml
+/src/main/resources/application.yml
