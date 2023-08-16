@@ -1,157 +1,51 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="네 이 버 지 도">
-    <meta name="description" content="">
-    <title>mainpage</title>
-    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="/css/mainpage.css" media="screen">
-    <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 5.14.1, nicepage.com">
-    <meta name="referrer" content="origin">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    
-    
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="mainpage">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-afb7"><a href="https://nicepage.com" class="u-align-center u-image u-logo u-image-1">
-        <img src="/images/default-logo.png" class="u-logo-image u-logo-image-1">
-      </a></header>
-    <section class="u-clearfix u-section-1" id="sec-768b">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-size-12">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                  <div class="u-container-layout u-container-layout-1">
-                    <div class="u-expanded-width u-form u-form-1">
-                      <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form" source="email" name="form-1" style="padding: 10px;">
-                        <div class="u-form-group u-form-select u-label-top u-form-group-1">
-                          <label for="select-21b6" class="u-label u-spacing-1 u-label-1">기준년도</label>
-                          <div class="u-form-select-wrapper">
-                            <select id="select-21b6" name="select" class="u-input u-input-rectangle u-input-1">
-                              <option value="2023" data-calc="2023" selected="selected">2023</option>
-                              <option value="2022" data-calc="2022">2022</option>
-                              <option value="2021" data-calc="2021">2021</option>
-                            </select>
-                            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-                          </div>
-                        </div>
-                        <div class="u-form-group u-form-input-layout-horizontal u-form-radiobutton u-label-top u-form-group-2">
-                          <label class="u-label u-spacing-1 u-label-2">주소구분</label>
-                          <div class="u-form-radio-button-wrapper">
-                            <div class="u-input-row">
-                              <input id="field-03f0" type="radio" name="radiobutton" value="groundnum" class="u-field-input" checked="checked" data-calc="groundnum">
-                              <label class="u-field-label" for="field-03f0" style="font-size: 0.625rem;">지번주소</label>
-                            </div>
-                            <div class="u-input-row">
-                              <input id="field-aaa4" type="radio" name="radiobutton" value="loadname" class="u-field-input" data-calc="loadname">
-                              <label class="u-field-label" for="field-aaa4" style="font-size: 0.625rem;">도로명주소</label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="u-form-group u-form-select u-label-top u-form-group-3">
-                          <label for="select-64bb" class="u-label u-spacing-1 u-label-3">시도</label>
-                          <div class="u-form-select-wrapper">
-                            <select id="select-64bb" name="select-1" class="u-input u-input-rectangle u-input-2" autofocus="autofocus" required="required">
-                              <option value="경기도" data-calc="" selected="selected">경기도</option>
-                              <option value="충청도" data-calc="">충청도</option>
-                            </select>
-                            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-                          </div>
-                        </div>
-                        <div class="u-form-group u-form-select u-label-top u-form-group-4">
-                          <label for="select-b1c8" class="u-label u-spacing-1 u-label-4">시군구</label>
-                          <div class="u-form-select-wrapper">
-                            <select id="select-b1c8" name="select-2" class="u-input u-input-rectangle u-input-3">
-                              <option value="고양시 덕양구" data-calc="">고양시 덕양구</option>
-                              <option value="Item 2" data-calc="">Item 2</option>
-                              <option value="Item 3" data-calc="">Item 3</option>
-                            </select>
-                            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-                          </div>
-                        </div>
-                        <div class="u-form-group u-form-select u-label-top u-form-group-5">
-                          <label for="select-40ec" class="u-label u-spacing-1 u-label-5">읍면동</label>
-                          <div class="u-form-select-wrapper">
-                            <select id="select-40ec" name="select-3" class="u-input u-input-rectangle u-input-4">
-                              <option value="덕양구 화정동" data-calc="">덕양구 화정동</option>
-                              <option value="Item 2" data-calc="">Item 2</option>
-                              <option value="Item 3" data-calc="">Item 3</option>
-                            </select>
-                            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-                          </div>
-                        </div>
-                        <div class="u-form-group u-label-top u-form-group-6">
-                          <label for="text-1945" class="u-label u-spacing-1 u-label-6">단지명</label>
-                          <input type="text" placeholder="" id="text-1945" name="text" class="u-input u-input-rectangle u-input-5">
-                        </div>
-                        <div class="u-align-center u-form-group u-form-submit u-label-top">
-                          <input type="submit" value="submit" class="u-form-control-hidden">
-                          <a href="#" class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1">검색</a>
-                        </div>
-                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                        <input type="hidden" value="" name="recaptchaResponse">
-                        <input type="hidden" name="formServices" value="0b37bec4da00dd8f4986b5bc0c283e7c">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                  <div class="u-container-layout u-container-layout-2">
-                    <h2 class="u-align-left u-text u-text-1">&nbsp;검색결과</h2>
-                    <ol class="u-align-left u-text u-text-2">
-                      <li>Sample Item 2<br>
-                      </li>
-                      <li>Sample Item 3</li>
-                      <li>dfkjgld</li>
-                      <li>dfg</li>
-                      <li>dfg</li>
-                      <li>dfg</li>
-                      <li>dfg</li>
-                      <li>dfg</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>레알 부동산 거래 조회 사이트</title>
+
+  <!--부트스트랩 css 추가-->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/mainpage.css">
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=97fe312dfcd86517e6746bfd06e241c8"></script>
+  <!--부트스트랩 js, jquery 추가-->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/map.js"></script>
+  <script src="/js/util.js"></script>
+</head>
+<body class="background_seoul">
+  <div>
+    <div>
+      <div class="container" >
+        <div class="mt-4 mb-4 text-white">
+          <h2>레알 부동산 거래 조회</h2>
+        </div>
+        <form action="/search" method = "post">
+          <label class="text-white">주소를 입력하시면 각종 부동산 거래를 조회해드립니다.</label>
+          <div class="row mb-2">
+            <div class="col-10">
+              <input type="text" class="form-control" id="address_kakao" name="address"
+                     placeholder="시/군/구까지의 주소 혹은 도로명 주소를 입력해주세요" >
             </div>
-            <div class="u-size-48">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-3">
-                  <div class="u-container-layout u-container-layout-3">
-                    <div class="u-absolute-hcenter u-container-style u-expanded u-group u-palette-1-base u-shape-rectangle u-group-1">
-                      <div class="u-container-layout u-container-layout-4">
-                        <h1 class="u-text u-text-default u-text-3">네 이 버 지 도</h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="col-2 d-flex">
+              <button type="submit" class="btn btn-primary" id="btn-save">검색</button>
             </div>
           </div>
+        </form>
+        <div style="height: 210px;" class="mb-3 list-group overflow-auto">
+          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+          <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+          <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+          <a href="#" class="list-group-item list-group-item-action">A fifth link item</a>
         </div>
+        <div id="map" style="width:100%;height:500px;"/>
       </div>
-    </section>
-    
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-e114"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">이 사이트의 저작권은<br>XX회사에 있습니다.
-        </p>
-      </div></footer>
-  
-</body></html>
+      <div th:replace="/footer :: footer"></div>
+    </div>
+  </div>
+</body>
+</html>

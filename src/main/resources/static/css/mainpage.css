@@ -1,232 +1,28 @@
- .u-section-1 {
-  min-height: 808px;
+.grid-image{
+  display: flex;
+  justify-content: center;
+}
+img {
+  margin: 20px 0 20px;
+  width: 50%;
+  height: 450px;
 }
 
-.u-section-1 .u-layout-wrap-1 {
-  margin-top: -1px;
-  margin-bottom: 0;
+.background_seoul{
+  background-image: url("../images/city_korea.jpg");
+  background-size: cover;
 }
 
-.u-section-1 .u-layout-cell-1 {
-  min-height: 489px;
+/* 스크롤바의 폭 너비 */
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-.u-section-1 .u-container-layout-1 {
-  padding: 0;
+::-webkit-scrollbar-thumb {
+  background: rgb(118, 119, 121); /* 스크롤바 색상 */
+  border-radius: 1px; /* 스크롤바 둥근 테두리 */
 }
 
-.u-section-1 .u-form-1 {
-  height: 489px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.u-section-1 .u-form-group-1 {
-  margin-left: 0;
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-}
-
-.u-section-1 .u-label-1 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-input-1 {
-  font-size: 0.75rem;
-}
-
-.u-section-1 .u-form-group-2 {
-  margin-left: 0;
-}
-
-.u-section-1 .u-label-2 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-form-group-3 {
-  margin-left: 0;
-  margin-top: auto !important;
-  margin-bottom: 10px !important;
-}
-
-.u-section-1 .u-label-3 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-input-2 {
-  font-size: 0.75rem;
-}
-
-.u-section-1 .u-form-group-4 {
-  margin-left: 0;
-  margin-top: auto !important;
-  margin-bottom: 10px !important;
-}
-
-.u-section-1 .u-label-4 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-input-3 {
-  font-size: 0.75rem;
-}
-
-.u-section-1 .u-form-group-5 {
-  margin-left: 0;
-  margin-top: auto !important;
-  margin-bottom: 10px !important;
-}
-
-.u-section-1 .u-label-5 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-input-4 {
-  font-size: 0.75rem;
-}
-
-.u-section-1 .u-form-group-6 {
-  margin-left: 0;
-  margin-top: auto !important;
-  margin-bottom: 10px !important;
-}
-
-.u-section-1 .u-label-6 {
-  font-size: 0.75rem;
-  width: 56px;
-  letter-spacing: -1px;
-}
-
-.u-section-1 .u-input-5 {
-  font-size: 0.75rem;
-  height: 30px;
-}
-
-.u-section-1 .u-btn-1 {
-  letter-spacing: 0px;
-  border-style: solid;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.u-section-1 .u-layout-cell-2 {
-  min-height: 323px;
-}
-
-.u-section-1 .u-container-layout-2 {
-  padding: 0;
-}
-
-.u-section-1 .u-text-1 {
-  font-size: 2.25rem;
-  margin: 4px 0 0;
-}
-
-.u-section-1 .u-text-2 {
-  font-size: 1.375rem;
-  padding-left: 30px;
-  margin: 0;
-}
-
-.u-section-1 .u-layout-cell-3 {
-  min-height: 809px;
-}
-
-.u-section-1 .u-container-layout-3 {
-  padding: 0;
-}
-
-.u-section-1 .u-group-1 {
-  min-height: 809px;
-}
-
-.u-section-1 .u-container-layout-4 {
-  padding: 30px;
-}
-
-.u-section-1 .u-text-3 {
-  margin: 296px auto 0;
-}
-
-@media (max-width: 1199px) {
-   .u-section-1 {
-    min-height: 666px;
-  }
-
-  .u-section-1 .u-layout-cell-1 {
-    min-height: 403px;
-  }
-
-  .u-section-1 .u-layout-cell-2 {
-    min-height: 266px;
-  }
-
-  .u-section-1 .u-layout-cell-3 {
-    min-height: 667px;
-  }
-
-  .u-section-1 .u-group-1 {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 991px) {
-   .u-section-1 {
-    min-height: 510px;
-  }
-
-  .u-section-1 .u-layout-cell-1 {
-    min-height: 100px;
-  }
-
-  .u-section-1 .u-layout-cell-2 {
-    min-height: 100px;
-  }
-
-  .u-section-1 .u-layout-cell-3 {
-    min-height: 511px;
-  }
-}
-
-@media (max-width: 767px) {
-   .u-section-1 {
-    min-height: 710px;
-  }
-
-  .u-section-1 .u-text-2 {
-    font-size: 1rem;
-  }
-
-  .u-section-1 .u-layout-cell-3 {
-    min-height: 479px;
-  }
-
-  .u-section-1 .u-container-layout-4 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@media (max-width: 575px) {
-   .u-section-1 {
-    min-height: 521px;
-  }
-
-  .u-section-1 .u-text-1 {
-    font-size: 1.875rem;
-  }
-
-  .u-section-1 .u-layout-cell-3 {
-    min-height: 302px;
-  }
+::-webkit-scrollbar-track {
+  background: rgba(220, 20, 60, .1);  /*스크롤바 뒷 배경 색상*/
 }
