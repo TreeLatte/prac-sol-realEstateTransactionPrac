@@ -8,9 +8,28 @@ img {
   height: 450px;
 }
 
-.background_seoul{
+.background-seoul{
   background-image: url("../images/city_korea.jpg");
   background-size: cover;
+}
+
+.search-empty{
+  height: 210px;
+  background-color:#86b7fe;
+}
+
+.search-notempty{
+  height: 210px;
+  background-color:#86b7fe;
+}
+
+.map-css{
+  width:100%;
+  height:500px;
+}
+
+.footer-css{
+  background-color:#86b7fe;
 }
 
 /* 스크롤바의 폭 너비 */

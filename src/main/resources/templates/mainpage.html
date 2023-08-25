@@ -5,45 +5,56 @@
   <title>레알 부동산 거래 조회 사이트</title>
 
   <!--부트스트랩 css 추가-->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/mainpage.css">
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=97fe312dfcd86517e6746bfd06e241c8"></script>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/mainpage.css}" rel="stylesheet">
   <!--부트스트랩 js, jquery 추가-->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/map.js"></script>
-  <script src="/js/util.js"></script>
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <!-- 카카오 api -->
+  <script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?autoload=false&'+'appkey='+${@environment.getProperty('appKey')}}"></script>
+  <!-- 기타 유틸 추가-->
+  <script th:src="@{/js/map.js}"></script>
+  <script th:src="@{/js/util.js}"></script>
 </head>
-<body class="background_seoul">
+<body class="background-seoul">
   <div>
     <div>
       <div class="container" >
         <div class="mt-4 mb-4 text-white">
           <h2>레알 부동산 거래 조회</h2>
         </div>
-        <form action="/search" method = "post">
+        <form action="/transactions/search" th:object="${AddressSearchForm}" method = "post">
           <label class="text-white">주소를 입력하시면 각종 부동산 거래를 조회해드립니다.</label>
           <div class="row mb-2">
+            <!-- 주소 입력 부분 -->
             <div class="col-10">
               <input type="text" class="form-control" id="address_kakao" name="address"
-                     placeholder="시/군/구까지의 주소 혹은 도로명 주소를 입력해주세요" >
+                     placeholder="시/군/구까지의 주소 혹은 도로명 주소를 입력해주세요"
+                     th:class="${#fields.hasErrors('address')}? 'form-control fieldError' : 'form-control'" >
+              <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}">주소명이 잘못되었습니다.</p>
             </div>
+            <!-- 검색 submit 버튼 -->
             <div class="col-2 d-flex">
               <button type="submit" class="btn btn-primary" id="btn-save">검색</button>
             </div>
           </div>
         </form>
-        <div style="height: 210px;" class="mb-3 list-group overflow-auto">
-          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-            The current link item
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-          <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-          <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-          <a href="#" class="list-group-item list-group-item-action">A fifth link item</a>
+        <!-- 검색 결과가 있을 경우 리스트 출력 예정 -->
+        <div th:unless="${transactions.isEmpty()}">
+          <table class="mb-3 list-group overflow-auto search-notempty">
+            <tbody>
+              <tr th:each="transaction : ${transactions}" class="list-group-item list-group-item-action" aria-current="true">
+                <td><span th:text="|${transaction.RdealerLawdnm} ${transaction.Dong} ${transaction.ApartmentName} ${transaction.Jibun}|"></span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div id="map" style="width:100%;height:500px;"/>
+        <div th:if="${transactions.isEmpty()}" class="mb-3 list-group overflow-auto search-empty">
+          <span>검색 결과가 없습니다.</span>
+        </div>
+        <div id="map" class="map-css"/>
       </div>
+      <!-- footer -->
       <div th:replace="/footer :: footer"></div>
     </div>
   </div>
