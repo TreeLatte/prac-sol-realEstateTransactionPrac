@@ -10,11 +10,6 @@
   <!--부트스트랩 js, jquery 추가-->
   <script th:src="@{/js/jquery.min.js}"></script>
   <script th:src="@{/js/bootstrap.min.js}"></script>
-  <!-- 카카오 api -->
-  <script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?autoload=false&'+'appkey='+${@environment.getProperty('appKey')}}"></script>
-  <!-- 기타 유틸 추가-->
-  <script th:src="@{/js/map.js}"></script>
-  <script th:src="@{/js/util.js}"></script>
 </head>
 <body class="background-seoul">
   <div>
@@ -43,8 +38,9 @@
         <div th:unless="${transactions.isEmpty()}">
           <table class="mb-3 list-group overflow-auto search-notempty">
             <tbody>
-              <tr th:each="transaction : ${transactions}" class="list-group-item list-group-item-action" aria-current="true">
-                <td><span th:text="|${transaction.RdealerLawdnm} ${transaction.Dong} ${transaction.ApartmentName} ${transaction.Jibun}|"></span></td>
+              <tr th:each="transaction : ${transactions}" th:onclick="searchResultOnclick(this, [[${transaction.RdealerLawdnm}]], [[${transaction.Dong}]], [[${transaction.Jibun}]])"
+                  class="list-group-item list-group-item-action search_line" aria-current="true">
+                <td><span th:text="|${transaction.RdealerLawdnm} ${transaction.Dong} ${transaction.ApartmentName}|"></span></td>
               </tr>
             </tbody>
           </table>
@@ -58,5 +54,10 @@
       <div th:replace="/footer :: footer"></div>
     </div>
   </div>
+  <!-- 카카오 api -->
+  <script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?'+'appkey='+${@environment.getProperty('appKey')}+'&libraries=clusterer,services,drawing'}"></script>
+  <!-- 기타 유틸 추가-->
+  <script th:src="@{/js/map.js}"></script>
+  <script th:src="@{/js/util.js}"></script>
 </body>
 </html>
