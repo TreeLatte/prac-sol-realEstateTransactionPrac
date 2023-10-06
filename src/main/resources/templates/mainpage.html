@@ -57,6 +57,9 @@
   <!-- 카카오 api -->
   <script th:src="@{'//dapi.kakao.com/v2/maps/sdk.js?'+'appkey='+${@environment.getProperty('appKey')}+'&libraries=clusterer,services,drawing'}"></script>
   <!-- 기타 유틸 추가-->
+  <script type="text/javascript" th:inline="javascript">
+    let transactions = $.parseJSON('[[ ${transactions} ]]');
+  </script>
   <script th:src="@{/js/map.js}"></script>
   <script th:src="@{/js/util.js}"></script>
 </body>

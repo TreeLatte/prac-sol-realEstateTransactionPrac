@@ -1,43 +1,67 @@
 let mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+        level: 5, // 지도의 확대 레벨
+        disableDoubleClickZoom: true,
     };
 
 let map = new kakao.maps.Map(mapContainer, mapOption);
+map.setZoomable(false);
 
 // 장소 검색 객체를 생성합니다
 let ps = new kakao.maps.services.Places();
 
 let geocoder = new kakao.maps.services.Geocoder();
+map.setLevel(3);
 
-// 키워드 검색 완료 시 호출되는 콜백함수 입니다
-// function placesSearchCB (data, status, pagination) {
-//     if (status === kakao.maps.services.Status.OK) {
-//
-//         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-//         // LatLngBounds 객체에 좌표를 추가합니다
-//         var bounds = new kakao.maps.LatLngBounds();
-//
-//         for (var i = 0; i < data.length; i++) {
-//             displayMarker(data[i]);
-//             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-//         }
-//
-//         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-//         map.setBounds(bounds);
-//     }
-//     else {
-//         console.log(data);
-//         console.log(status);
-//         console.log(pagination);
-//     }
-// }
+console.log(transactions);
+
+if(transactions){
+
+    transactions.forEach((transaction) => {
+        console.log(transaction);
+        let findPlace = transaction.rdealerLawdnm + " " + transaction.dong + " " + transaction.jibun;
+        console.log(findPlace);
+        geocoder.addressSearch(findPlace,searchResultCB);
+        // let point = {};
+        // point.x = coordinate[1];
+        // point.y = coordinate[0];
+        // points.push(point);
+        // path.push(new kakao.maps.LatLng(coordinate[1], coordinate[0]));
+    });
+
+
+    // var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    //
+    // // 결과값으로 받은 위치를 마커로 표시합니다
+    // var marker = new kakao.maps.Marker({
+    //     map: map,
+    //     position: coords
+    // });
+}
+let infowindow = new kakao.maps.InfoWindow({
+});
+function searchResultCB(result, status) {
+    if (status === kakao.maps.services.Status.OK) {
+        map.setLevel(3);
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    }
+}
 
 // 주소 검색 완료 시 호출되는 콜백함수 입니다
 function addressSearchCB(result, status) {
     if (status === kakao.maps.services.Status.OK) {
-
+        console.log(result);
+        infowindow.close();
+        map.setLevel(3);
         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
         // 결과값으로 받은 위치를 마커로 표시합니다
@@ -47,9 +71,14 @@ function addressSearchCB(result, status) {
         });
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">result</div>'
-        });
+        const temp = document.createElement('div');
+        temp.textContent = result[0].road_address.building_name;
+        temp.style.width = '200px';
+        temp.style.textAlign = 'center';
+        temp.style.padding = '5px ';
+
+        // infowindow.setContent('<div style="width:150px;text-align:center;padding:6px 0;" ></div>');
+        infowindow.setContent(temp);
         infowindow.open(map, marker);
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
